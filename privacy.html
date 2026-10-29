@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Privacy Policy - AI Agent Cockpit Calendar</title>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #ffffff;
+    color: #1f2933;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", Meiryo, sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+    overflow-wrap: anywhere;
+  }
+  header, main, footer { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+  header { padding-top: 28px; padding-bottom: 8px; border-bottom: 1px solid #d9dee5; }
+  .site { margin: 0 0 4px; font-size: 14px; color: #52606d; }
+  .site a { color: #1a56b0; }
+  nav.lang { margin: 8px 0 12px; font-size: 15px; }
+  nav.lang a { color: #1a56b0; margin-right: 14px; }
+  h1 { font-size: 26px; line-height: 1.4; margin: 36px 0 4px; }
+  h2 { font-size: 20px; line-height: 1.5; margin: 32px 0 8px; padding-bottom: 4px; border-bottom: 1px solid #e4e7eb; }
+  p, li { margin: 8px 0; }
+  ul { padding-left: 1.4em; }
+  a { color: #1a56b0; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.9em; background: #f1f4f8; padding: 1px 4px; border-radius: 4px; overflow-wrap: anywhere; word-break: break-all; }
+  .meta { color: #52606d; font-size: 15px; margin: 0 0 12px; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 15px; }
+  th, td { border: 1px solid #d9dee5; padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: #e8edf4; color: #1c2b3f; }
+  blockquote { margin: 12px 0; padding: 10px 14px; background: #f5f7fa; border-left: 4px solid #9aa5b1; }
+  section.lang-block { padding-bottom: 24px; }
+  section.lang-block + section.lang-block { border-top: 2px solid #d9dee5; margin-top: 16px; }
+  footer { padding-top: 16px; padding-bottom: 32px; border-top: 1px solid #d9dee5; font-size: 14px; color: #52606d; }
+  @media (max-width: 560px) {
+    h1 { font-size: 22px; }
+    h2 { font-size: 18px; }
+    table, thead, tbody, tr, th, td { display: block; width: 100%; }
+    thead { display: none; }
+    tr { border: 1px solid #d9dee5; margin-bottom: 10px; }
+    td { border: none; border-bottom: 1px solid #e4e7eb; }
+    td:last-child { border-bottom: none; }
+    td[data-label]::before { content: attr(data-label); display: block; font-size: 13px; font-weight: 600; color: #52606d; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <p class="site"><a href="index.html">AI Agent Cockpit Calendar</a></p>
+  <nav class="lang" aria-label="Language">
+    <a href="#en" hreflang="en">English</a>
+    <a href="#ja" hreflang="ja" lang="ja">日本語</a>
+  </nav>
+</header>
+
+<main>
+<section id="en" class="lang-block" lang="en">
+  <h1>Privacy Policy</h1>
+  <p class="meta">AI Agent Cockpit Calendar<br>Effective date: October 29, 2026</p>
+
+  <h2>1. About this policy</h2>
+  <p>This policy describes how the OAuth app "AI Agent Cockpit Calendar" handles Google user data. The OAuth app is used by the calendar feature of AI Agent Cockpit ("Cockpit"), an app that runs on your own computer (such as a Mac) and manages Claude Code sessions. The calendar feature shows the events of the Google Calendar accounts you connect on the Cockpit screen, lets you edit and delete events, and calculates your free time.</p>
+
+  <h2>2. Permissions (scopes) requested and what they are used for</h2>
+  <table>
+    <thead><tr><th>Scope</th><th>Use</th></tr></thead>
+    <tbody>
+      <tr><td data-label="Scope"><code>openid</code>, <code>email</code></td><td data-label="Use">To get the email address of the connected Google Account, so that Cockpit can tell which account is connected.</td></tr>
+      <tr><td data-label="Scope"><code>https://www.googleapis.com/auth/calendar.events</code></td><td data-label="Use">To list events (for display), update events (when you edit them), and delete events (when you delete them). Cockpit does not create new events.</td></tr>
+      <tr><td data-label="Scope"><code>https://www.googleapis.com/auth/calendar.calendarlist.readonly</code></td><td data-label="Use">To get the list of your calendars (name, color, and your access role). Cockpit only reads this list and does not change it.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>3. How the data is used</h2>
+  <ul>
+    <li>Events and the calendar list are used only to show them on the Cockpit screen and to calculate your free time.</li>
+    <li>Fetched events are cached in the memory of the Cockpit server for 60 seconds, per account and date range. The cache is discarded when you edit or delete an event. The "Reload" button on the screen fetches the events again from Google without using the cache. Event contents are not written to files.</li>
+    <li>When you press "Copy" for your free time, Cockpit puts text that contains only dates and times into your clipboard. Event titles and other event details are not included.</li>
+    <li>Access tokens are kept only in memory.</li>
+    <li>Cockpit does not write refresh tokens or event contents to its logs.</li>
+  </ul>
+
+  <h2>4. Where the data is stored</h2>
+  <ul>
+    <li>The data that Cockpit stores is kept only on your own computer, in <code>~/.claude-cockpit/calendar/</code> (the default location). The folder is created with permissions that only the owner can access (0700), and the files with permissions that only the owner can read and write (0600).</li>
+    <li>The stored files are:
+      <ul>
+        <li><code>accounts.json</code>: for each connected account, the email address, the refresh token, the granted scopes, the time it was connected, and the connection status.</li>
+        <li><code>oauth-client.json</code>: the OAuth client information that you place in Cockpit.</li>
+      </ul>
+    </li>
+    <li>The developer does not run any server for this app and does not receive your Google user data. For the calendar feature, Cockpit communicates only with Google (<code>accounts.google.com</code>, <code>oauth2.googleapis.com</code>, and <code>www.googleapis.com</code>).</li>
+    <li>The Cockpit server listens only on <code>127.0.0.1</code>. If you turn on Cockpit's phone connection or multiple-PC feature, Cockpit sends events to the devices that you paired or registered yourself, in order to show them on those devices' screens.</li>
+  </ul>
+
+  <h2>5. Sharing and transfer</h2>
+  <ul>
+    <li>Google user data is not shared with or sold to third parties.</li>
+    <li>Google user data is not used for advertising.</li>
+    <li>Google user data is not sent to AI models (including AI agents such as Claude Code), and is not used to train AI models.</li>
+  </ul>
+  <blockquote>AI Agent Cockpit Calendar's use and transfer of information received from Google APIs will adhere to <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</blockquote>
+
+  <h2>6. Disconnecting and deleting your data</h2>
+  <ul>
+    <li>When you press "Disconnect" for an account on Cockpit's calendar screen, Cockpit asks Google to revoke the refresh token, and deletes the information about that account stored on your computer (such as the email address and the refresh token). It also discards the access token and the cached events in memory. Even if the revoke request fails, the information on your computer is deleted. In that case, please revoke access in your Google Account as described below.</li>
+    <li>You can also revoke the access of AI Agent Cockpit Calendar from "Third-party apps &amp; services" in your Google Account.</li>
+    <li>To delete all the calendar data that Cockpit stores, delete the folder <code>~/.claude-cockpit/calendar/</code>.</li>
+  </ul>
+
+  <h2>7. Changes to this policy</h2>
+  <p>When this policy changes, this page is updated and the date of the change is added below the effective date at the top.</p>
+
+  <h2>8. Contact</h2>
+  <p>For questions about this policy, please open an issue in the <a href="https://github.com/yukimura-manase/ai-agent-cockpit-calendar/issues">GitHub repository of this site</a>.</p>
+</section>
+
+<section id="ja" class="lang-block" lang="ja">
+  <h1>プライバシー ポリシー</h1>
+  <p class="meta">AI Agent Cockpit Calendar<br>制定日: 2026 年 10 月 29 日</p>
+
+  <h2>1. このポリシーについて</h2>
+  <p>このポリシーは、OAuth アプリ「AI Agent Cockpit Calendar」による Google のユーザー データの扱いを定めます。この OAuth アプリは、AI Agent Cockpit (以下「Cockpit」) のカレンダー機能が使います。Cockpit は、利用者のコンピューター (Mac など) の中で動き、Claude Code のセッションを管理するアプリです。カレンダー機能は、利用者が連携した Google アカウントの Google カレンダーの予定を Cockpit の画面に表示し、予定の編集・削除と、空き時間の計算を行います。</p>
+
+  <h2>2. 求める権限 (スコープ) と用途</h2>
+  <table>
+    <thead><tr><th>スコープ</th><th>用途</th></tr></thead>
+    <tbody>
+      <tr><td data-label="スコープ"><code>openid</code>、<code>email</code></td><td data-label="用途">連携した Google アカウントのメール アドレスを取得し、どのアカウントを連携したかを見分けます。</td></tr>
+      <tr><td data-label="スコープ"><code>https://www.googleapis.com/auth/calendar.events</code></td><td data-label="用途">予定の一覧の取得 (表示)、予定の更新 (編集)、予定の削除に使います。Cockpit は予定を新しく作りません。</td></tr>
+      <tr><td data-label="スコープ"><code>https://www.googleapis.com/auth/calendar.calendarlist.readonly</code></td><td data-label="用途">カレンダーの一覧 (名前・色・利用者の権限) を取得します。一覧は読むだけで、変更しません。</td></tr>
+    </tbody>
+  </table>
+
+  <h2>3. データの使い方</h2>
+  <ul>
+    <li>予定とカレンダーの一覧は、Cockpit の画面への表示と、空き時間の計算にだけ使います。</li>
+    <li>取得した予定は、アカウントと期間ごとに、Cockpit のサーバーのメモリに 60 秒キャッシュします。予定を編集・削除したときは、キャッシュを捨てます。画面の「再読み込み」では、キャッシュを使わずに Google から取り直します。予定の内容はファイルに保存しません。</li>
+    <li>空き時間の「コピー」を押すと、Cockpit は日付と時刻だけの文字列をクリップボードに入れます。予定の件名などの内容は入れません。</li>
+    <li>access token はメモリにだけ持ちます。</li>
+    <li>Cockpit は、refresh token と予定の内容をログに書きません。</li>
+  </ul>
+
+  <h2>4. 保存先</h2>
+  <ul>
+    <li>Cockpit が保存するデータは、利用者のコンピューターの中の <code>~/.claude-cockpit/calendar/</code> (既定の場所) にだけ置きます。フォルダーは所有者だけが開ける権限 (0700) で、ファイルは所有者だけが読み書きできる権限 (0600) で作ります。</li>
+    <li>保存するファイルは次の 2 つです。
+      <ul>
+        <li><code>accounts.json</code>: 連携したアカウントごとの、メール アドレス・refresh token・許可されたスコープ・連携した日時・連携の状態</li>
+        <li><code>oauth-client.json</code>: 利用者が Cockpit に置いた OAuth クライアントの情報</li>
+      </ul>
+    </li>
+    <li>このアプリのためのサーバーを、開発者は持っていません。開発者は利用者の Google のユーザー データを受け取りません。カレンダー機能で Cockpit が通信する相手は、Google (<code>accounts.google.com</code>、<code>oauth2.googleapis.com</code>、<code>www.googleapis.com</code>) だけです。</li>
+    <li>Cockpit のサーバーは <code>127.0.0.1</code> だけで待ち受けます。利用者が Cockpit のスマホ接続や複数の PC の機能を有効にした場合は、利用者自身がペアリング・登録した端末の画面に予定を表示するために、その端末へ予定を送ります。</li>
+  </ul>
+
+  <h2>5. 共有と転送</h2>
+  <ul>
+    <li>Google のユーザー データを第三者に提供・販売しません。</li>
+    <li>Google のユーザー データを広告に使いません。</li>
+    <li>Google のユーザー データを AI のモデル (Claude Code などの AI エージェントを含む) に送りません。AI のモデルの学習にも使いません。</li>
+  </ul>
+  <blockquote>AI Agent Cockpit Calendar が Google API から受け取った情報の使用と転送は、Limited Use の要件を含む <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a> に従います。</blockquote>
+
+  <h2>6. 連携の解除とデータの削除</h2>
+  <ul>
+    <li>Cockpit のカレンダーの画面でアカウントの「解除」を押すと、Cockpit は Google に refresh token の取り消しを求め、利用者のコンピューターに保存したそのアカウントの情報 (メール アドレスや refresh token など) を消します。メモリ上の access token と予定のキャッシュも捨てます。取り消しの要求が失敗しても、コンピューターの中の情報は消します。この場合は、次の方法で Google アカウントから取り消してください。</li>
+    <li>Google アカウントの「サードパーティ製のアプリとサービス」からも、AI Agent Cockpit Calendar のアクセスを取り消せます。</li>
+    <li>Cockpit が保存したカレンダーのデータをすべて消すには、フォルダー <code>~/.claude-cockpit/calendar/</code> を削除します。</li>
+  </ul>
+
+  <h2>7. 改定</h2>
+  <p>このポリシーを変えるときは、このページを書き換え、冒頭の制定日の下に改定日を書きます。</p>
+
+  <h2>8. 問い合わせ先</h2>
+  <p>このポリシーについての問い合わせは、このサイトの <a href="https://github.com/yukimura-manase/ai-agent-cockpit-calendar/issues">GitHub リポジトリの Issues</a> に書き込んでください。</p>
+</section>
+</main>
+
+<footer>
+  <p><a href="index.html">AI Agent Cockpit Calendar</a> · <a href="#en">English</a> · <a href="#ja" lang="ja">日本語</a></p>
+</footer>
+</body>
+</html>
